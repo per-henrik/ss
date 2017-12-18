@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta name="Generator" content="atom.io"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Expires" content="60"/>
+    <style type="text/css">
+        body {
+          background: #000 url('LeatherHoles-Apple.png') top center;
+        }
+        body,a{
+          color:#2CA2A1;
+          text-decoration:none;
+          font-family: Verdana, Sans-Serif;
+          font-size: 12pt;
+        }
+        dt {
+          font-weight : bold;
+        }
+        dl {
+          border-left : solid #B0EAE9 1px;
+//          border-left : dotted #2C6BA2 5px;
+          padding: 0px 5px;
+        }
+        dd {
+          margin-left: 10px;
+        }
+        a:hover {
+        text-decoration:underline;
+        }
+        img {
+          border:none;
+        }
+        p{
+          clear:both;
+        }
+        .tabs {
+          position:absolute;
+          display:none;
+        }
+        .tabs_height {
+          height:310px;
+        }
+        .button {
+          cursor:pointer;
+          float:left;
+          padding:3px 25px;
+          height:20px;
+          text-transform: uppercase;
+          text-align:center;
+          margin:0px 0px 0px 0px;
+          border:solid 1px #cccccc;
+          font-weight:bold;
+          background-color: rgba(255,255,255,0.1);
+
+        }
+        .selected {
+          background-color: rgba(255,255,255,0.3);
+          color:white;
+        }
+        .float {
+           float:left;
+        }
+    </style>
+	<title>@HOME</title>
+  <script src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script type="text/javascript">
+      var lastswitch = "first";
+      function bodyload() {
+        switchto('first');
+      };
+      function switchto(id) {
+        var tab = id+"tab";
+        var button = id+"button";
+        var lasttab = lastswitch+"tab";
+        var lastbutton = lastswitch+"button";
+        document.getElementById(lasttab).style.display='none';
+        document.getElementById(lastbutton).className = document.getElementById(lastbutton).className.replace("selected", "");
+
+        document.getElementById(button).className += " selected";
+        document.getElementById(tab).style.display='block';
+        lastswitch = id;
+      }
+    </script>
+</head>
+<body onload="bodyload()">
+<p style="float:left;padding-right:3px">
+  <img src="homepage.png" style="border:none;" alt="homepage" title=""/>
+</p>
+<dl class="float" id="jobb">
+  <dt>Jobb
+    <dd><a href="http://docs.google.com">Gdocs</a>
+    <dd><a href="http:/gmail.com/">Gmail</a>
+    <dd><a href="https://tripletex.no/execute/dashboard?contextId=1815818">Tripletex</a>
+</dl>
+
+<dl class="float" id="privat">
+  <dt>Privat
+    <dd><a href="http://skandiabanken.no">skandiabanken.no</a>
+    <dd><a href="http://localhost/?C=M&amp;O=D">localhost</a>
+</dl>
+
+<div style="clear:both;"></div>
+<div id="firstbutton" class = "button" onmouseover="switchto('first');">
+	&darr;  Feiring &darr;
+</div>
+<div id="secondbutton" class = "button" onmouseover="switchto('second');">
+	&darr;  Røa &darr;
+</div>
+<div id="thirdbutton" class = "button" onmouseover="switchto('third');">
+	&darr;  Moelv &darr;
+</div>
+<div id="forthbutton" class = "button" onmouseover="switchto('forth');">
+	&darr;  Alanya &darr;
+</div>
+
+<div style="clear:both;"></div>
+
+<div id="firsttab" class="tabs  tabs_height">
+    <a href="http://www.yr.no/place/Norway/Akershus/Eidsvoll/Feiring_skole/long.html">
+        <img src="http://www.yr.no/place/Norway/Akershus/Eidsvoll/Feiring_skole/avansert_meteogram.png" alt="" title="" />
+    </a>
+</div>
+
+<div id="secondtab" class="tabs">
+  <a href="http://www.yr.no/sted/Norge/Oslo/Oslo/Røa/detaljert_langtidsvarsel.html">
+      <img src="http://www.yr.no/sted/Norge/Oslo/Oslo/Røa/avansert_meteogram.png" alt="" title="" />
+  </a>
+</div>
+
+<div id="thirdtab" class="tabs">
+  <a href="http://www.yr.no/sted/Norge/Hedmark/Ringsaker/Moelv/langtidsvarsel.html">
+      <img  src="http://www.yr.no/sted/Norge/Hedmark/Ringsaker/Moelv/avansert_meteogram.png" alt="" title="" />
+  </a>
+</div>
+
+<div id="forthtab" class="tabs">
+  <a href="http://www.yr.no/sted/Tyrkia/Antalya/Alanya/langtidsvarsel.html">
+      <img  src="http://www.yr.no/sted/Tyrkia/Antalya/Alanya/avansert_meteogram.png" alt="" title="" />
+  </a>
+</div>
+
+<div style="clear:both;" class="tabs_height"></div>
+
+<br/>
+<div id="testing"></div>
+
+<a href="http://oja.no/cv">Per Henrik Oja &copy; 2015</a>
+</p>
+
+</body>
+</html>

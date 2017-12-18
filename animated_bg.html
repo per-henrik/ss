@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Testing animated Background</title>
+    <style>
+      body {
+        background-image: url("eplelær.png");
+        background-color: black;
+        background-repeat: repeat-x;
+        background-position: center;
+      }
+      header h1{
+        color: #90C3D4;
+        font-family:sans-serif;
+        letter-spacing: 0.4em;
+      }
+      #værvarsel{
+        width:828px;
+      }
+      #værvarsel #graf {
+        height:302px;
+        width:100%;
+        background-image: url("waitcolor.gif");
+      }
+      menu {
+        width:100%;
+        padding:0;
+        margin:0;
+        background-color:white;
+      }
+      menuitem {
+        padding:15px;
+        font-family: sans-serif;
+        text-transform:uppercase;
+        font-weight: bolder;
+      }
+      menuitem:hover {
+        background-color:#90C3D4;
+      }
+      menuitem:active {
+        background-color:#C390D4;
+      }
+      menu > menuitem {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>HOME PAGE</h1>
+    </header>
+    <section id="værvarsel">
+      <menu baseurl="http://www.yr.no/place/">
+        <menuitem
+          id="onload"
+          sted = "Norway/Akershus/Eidsvoll/Feiring_skole/"
+          onmouseover="show(this)"
+          onclick="show(this)">
+          Feiring
+        </menuitem>
+        <menuitem
+          sted="Norge/Oslo/Oslo/Røa/"
+          onmouseover="show(this)"
+          onclick="show(this)">
+          Røa
+        </menuitem>
+        <menuitem
+          sted = "Norge/Hedmark/Ringsaker/Moelv/"
+          onmouseover="show(this)"
+          onclick="show(this)"
+          >
+          Moelv
+        </menuitem>
+        <menuitem
+          sted = "Tyrkia/Antalya/Alanya/"
+          onmouseover="show(this)"
+          onclick="show(this)"
+          >
+          Alanya
+        </menuitem>
+      </menu>
+      <div id="graf"><img src="http://www.yr.no/sted/Norge/Oslo/Oslo/Røa/avansert_meteogram.png"</div>
+    </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      show('Norway/Akershus/Eidsvoll/Feiring_skole/');
+    });
+    function show(clicked){
+      console.log(clicked);
+      /*_html = "<a href='http://www.yr.no/sted/"+clicked.sted+"langtidsvarsel.html'><img src='http://www.yr.no/sted/"+clicked.sted+"avansert_meteogram.png'></a>";
+      document.getElementById("graf").innerHTML = _html;*/
+    }
+    </script>
+
+  </body>
+</html>
