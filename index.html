@@ -1,1 +1,116 @@
-animated_bg.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page - Proper</title>
+    <style>
+      body {
+        background-color: #6F8F9D;
+        background-repeat: repeat-x;
+        background-position: center;
+        margin:30px 10%;
+        width:828px;
+        font-family:sans-serif;
+
+      }
+      header, footer, #værvarsel {
+      background-color:white;
+      }
+      header h1{
+        color: #6F8F9D;
+        letter-spacing: 0.4em;
+        padding:15px;
+      }
+      footer {
+        padding:5px 15px;
+        margin:30px 0;
+      }
+      #værvarsel #graf {
+        height:302px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('sun.gif');
+      }
+      menu {
+        width:100%;
+        padding:0;
+        margin:0;
+        background-color:white;
+      }
+      menuitem {
+        padding:15px;
+        text-transform:uppercase;
+        font-weight: bolder;
+      }
+      menuitem:hover {
+        background-color:#B2C6CF;
+      }
+      menuitem:active {
+        background-color:#C390D4;
+      }
+      menu > menuitem {
+        display: inline-block;
+      }
+    </style>
+    <script>
+      function changeGraph(clicked){
+        var place;
+        place = clicked.attributes['sted'].value;
+        _html = " \
+          <a href='http://www.yr.no/sted/"+place+"langtidsvarsel.html'> \
+            <img src='http://www.yr.no/sted/"+place+"avansert_meteogram.png'> \
+          </a> \
+          ";
+        document.getElementById("graf").innerHTML = _html;
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>HOME PAGE</h1>
+    </header>
+    <section id="værvarsel">
+      <menu baseurl="http://www.yr.no/place/">
+        <menuitem
+          id="onload"
+          sted = "Norway/Akershus/Eidsvoll/Feiring_skole/"
+          onmouseover="changeGraph(this)"
+          onclick="changeGraph(this)"
+          >
+          Feiring
+        </menuitem>
+        <menuitem
+          sted="Norge/Oslo/Oslo/Røa/"
+          onmouseover="changeGraph(this)"
+          onclick="changeGraph(this)"
+          >
+          Røa
+        </menuitem>
+        <menuitem
+          sted = "Norge/Hedmark/Ringsaker/Moelv/"
+          onmouseover="changeGraph(this)"
+          onclick="changeGraph(this)"
+          >
+          Moelv
+        </menuitem>
+        <menuitem
+          sted = "Tyrkia/Antalya/Alanya/"
+          onmouseover="changeGraph(this)"
+          onclick="changeGraph(this)"
+          >
+          Alanya
+        </menuitem>
+      </menu>
+      <div id="graf"><img src="http://www.yr.no/sted/Norge/Oslo/Oslo/Røa/avansert_meteogram.png"</div>
+    </section>
+    <footer>
+      <p>Created by the amazing team behind <a href="http://skjerpa.no">Skjerpa Web AS</a></p>
+    </footer>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      changeGraph(document.getElementById("onload"));
+    });
+    </script>
+
+  </body>
+</html>
