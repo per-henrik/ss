@@ -6,23 +6,40 @@
     <style>
       body {
         background-color: #6F8F9D;
+        background-image:url('nordlyserfjordbotn.jpeg');
         background-repeat: repeat-x;
         background-position: center;
-        margin:30px 10%;
+        margin:10% auto;
         width:820px;
         font-family:sans-serif;
       }
       header, footer, #værvarsel {
-        background-color:white;
+        background-color: rgba(255,255,255,0.9) ;
+        text-align:center;
       }
       header h1{
         color: #6F8F9D;
         letter-spacing: 0.4em;
-        padding:15px;
+        padding:5px 0 0 0 ;
+        text-align:center;
+        border-color:#d7effa;
+        border-width:5px 0;
+        border-style:solid;
       }
       footer {
-        padding:5px 15px;
+        padding:15px 15px;
         margin:30px 0;
+        text-align:center;
+      }
+      a {
+        color:#185571;
+        transition: background-color 0.7s;
+        padding:15px 0;
+      }
+      a:hover {
+        background-color:#B2C6CF;
+        outline:20px black;
+        transition: background-color 0.7s;
       }
       #værvarsel #graf {
         height:302px;
@@ -44,12 +61,15 @@
         padding:15px;
         text-transform:uppercase;
         font-weight: bolder;
+        transition: background-color 0.7s ease-out;
       }
       menuitem:hover {
         background-color:#B2C6CF;
+        transition: background-color 0.7s ease-out;
       }
       menuitem:active {
         background-color:#C390D4;
+        transition: background-color 0.1s;
       }
       menu > menuitem {
         display: inline-block;
@@ -90,7 +110,7 @@
           Røa
         </menuitem>
         <menuitem
-          sted = "Norge/Hedmark/Ringsaker/Moelv/"
+          sted = "Norge/Hedmark/Ringsaker/Aspliafeltet/"
           onmouseover="changeGraph(this)"
           onclick="changeGraph(this)"
           >
@@ -107,7 +127,7 @@
       <div id="graf"><img src="http://www.yr.no/sted/Norge/Oslo/Oslo/Røa/avansert_meteogram.png"</div>
     </section>
     <footer>
-      <p>Created by the amazing team behind <a href="http://skjerpa.no">Skjerpa Web AS</a></p>
+      Created by the amazing team behind <a href="http://skjerpa.no">Skjerpa Web AS</a>
     </footer>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
