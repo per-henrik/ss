@@ -5,39 +5,37 @@
     <title>Home Page - Proper</title>
     <style>
       body {
-        background-color: #6F8F9D;
+        background-color:black;
         background-image:url('nordlyserfjordbotn.jpeg');
-        background-repeat: repeat-x;
+        background-repeat: no-repeat;
         background-position: center;
         margin:10% auto;
         width:820px;
         font-family:sans-serif;
       }
-      header, footer, #værvarsel {
-        background-color: rgba(255,255,255,0.9) ;
-        text-align:center;
-      }
       header h1{
-        color: #6F8F9D;
+        color: rgb(123, 183, 209);
         letter-spacing: 0.4em;
         padding:5px 0 0 0 ;
         text-align:center;
-        border-color:#d7effa;
-        border-width:5px 0;
-        border-style:solid;
       }
       footer {
         padding:15px 15px;
         margin:30px 0;
         text-align:center;
+        color:#bdb9b9;
+      }
+      footer a:hover {
+        background:none;
       }
       a {
-        color:#185571;
-        transition: background-color 0.7s;
+        text-decoration: none;
+        color:inherit;
         padding:15px 0;
       }
       a:hover {
-        background-color:#B2C6CF;
+        color:#185571;
+        background-color:#d8effa;
         outline:20px black;
         transition: background-color 0.7s;
       }
@@ -46,16 +44,18 @@
         background-position: center;
         background-repeat: no-repeat;
         background-image: url('sun.gif');
+        background-color:white;
         margin:-4px;
       }
       #værvarsel {
         overflow:hidden;
+        text-align: center;
+        color:#bdb9b9; 
       }
       menu {
         width:100%;
         padding:0;
         margin:0;
-        background-color:white;
       }
       menuitem {
         padding:15px;
@@ -64,6 +64,7 @@
         transition: background-color 0.7s ease-out;
       }
       menuitem:hover {
+        color:#185571;
         background-color:#B2C6CF;
         transition: background-color 0.7s ease-out;
       }
@@ -73,6 +74,30 @@
       }
       menu > menuitem {
         display: inline-block;
+      }
+      @keyframes pulse_animation {
+        0% { color:rgba(255,255,255,0);}
+        10% { color:rgba(255,255,255,0.1);}
+        20% { color:rgba(255,255,255,0.3);}
+        30% { color:rgba(255,255,255,0.5);}
+        100% { color:rgba(255,255,255,0);}
+      }
+      #progress>*{
+        color:white;
+        font-size:10vw;
+        animation-name: pulse_animation;
+        animation-duration: 2000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier();
+      }
+      #dotOne {
+        animation-delay: 0s;
+      }
+      #dotTwo {
+        animation-delay: 0.5s;
+      }
+      #dotThree {
+        animation-delay: 1s;
       }
     </style>
     <script>
@@ -95,12 +120,11 @@
     <section id="værvarsel">
       <menu baseurl="http://www.yr.no/place/">
         <menuitem
-          id="onload"
-          sted = "Norway/Akershus/Eidsvoll/Feiring_skole/"
+          sted = "Norge/Hedmark/Ringsaker/Aspliafeltet/"
           onmouseover="changeGraph(this)"
           onclick="changeGraph(this)"
           >
-          Feiring
+          Moelv
         </menuitem>
         <menuitem
           sted="Norge/Oslo/Oslo/Røa/"
@@ -108,13 +132,6 @@
           onclick="changeGraph(this)"
           >
           Røa
-        </menuitem>
-        <menuitem
-          sted = "Norge/Hedmark/Ringsaker/Aspliafeltet/"
-          onmouseover="changeGraph(this)"
-          onclick="changeGraph(this)"
-          >
-          Moelv
         </menuitem>
         <menuitem
           sted = "Tyrkia/Antalya/Alanya/"
@@ -134,6 +151,10 @@
       changeGraph(document.getElementById("onload"));
     });
     </script>
-
+    <div id="progress">
+      <span id="dotOne">.</span>
+      <span id="dotTwo">.</span>
+      <span id="dotThree">.</span>
+    </div>
   </body>
 </html>
