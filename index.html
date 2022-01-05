@@ -124,6 +124,7 @@
           sted = "1-2828410"
           onmouseover="changeGraph(this)"
           onclick="changeGraph(this)"
+          id="default"
           >
           Aspelienga
         </menuitem>
@@ -136,22 +137,15 @@
           Alanya
         </menuitem>
       </menu>
-      <div id="graf"><img src="https://www.yr.no/nb/innhold/1-2828410/meteogram.svg"</div>
+      <div id="graf"></div>
     </section>
     <footer>
       Created by the amazing team behind <a href="https://skjerpa.no">Skjerpa Web AS</a>
     </footer>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-      changeGraph(document.getElementById("onload"));
+      changeGraph(document.getElementById("default"));
     });
     </script>
-<!--
-    <div id="progress">
-      <span id="dotOne">.</span>
-      <span id="dotTwo">.</span>
-      <span id="dotThree">.</span>
-    </div>
--->
-</body>
+  </body>
 </html>
