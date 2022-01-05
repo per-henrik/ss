@@ -40,7 +40,7 @@
         transition: background-color 0.7s;
       }
       #værvarsel #graf {
-        height:302px;
+        height:391px;
         background-position: center;
         background-repeat: no-repeat;
         background-image: url('sun.gif');
@@ -105,8 +105,8 @@
         var place;
         place = clicked.attributes['sted'].value;
         _html = " \
-          <a href='https://www.yr.no/sted/"+place+"langtidsvarsel.html'> \
-            <img src='https://www.yr.no/sted/"+place+"avansert_meteogram.png'> \
+          <a href='https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/"+place+"'> \
+            <img src='https://www.yr.no/nb/innhold/"+place+"/meteogram.svg'> \
           </a> \
           ";
         document.getElementById("graf").innerHTML = _html;
@@ -120,28 +120,23 @@
     <section id="værvarsel">
       <menu baseurl="https://www.yr.no/place/">
         <menuitem
-          sted = "Norge/Hedmark/Ringsaker/Aspliafeltet/"
+          stedsnavn = "Norge/Hedmark/Ringsaker/Aspliafeltet/"
+          sted = "1-2828410"
           onmouseover="changeGraph(this)"
           onclick="changeGraph(this)"
           >
-          Moelv
+          Aspelienga
         </menuitem>
         <menuitem
-          sted="Norge/Oslo/Oslo/Røa/"
-          onmouseover="changeGraph(this)"
-          onclick="changeGraph(this)"
-          >
-          Røa
-        </menuitem>
-        <menuitem
-          sted = "Tyrkia/Antalya/Alanya/"
+          stedsnavn = "Tyrkia/Provinsen%20Antalya/Alanya/Alanya"
+          sted="2-324190"
           onmouseover="changeGraph(this)"
           onclick="changeGraph(this)"
           >
           Alanya
         </menuitem>
       </menu>
-      <div id="graf"><img src="https://www.yr.no/sted/Norge/Oslo/Oslo/Røa/avansert_meteogram.png"</div>
+      <div id="graf"><img src="https://www.yr.no/nb/innhold/1-2828410/meteogram.svg"</div>
     </section>
     <footer>
       Created by the amazing team behind <a href="https://skjerpa.no">Skjerpa Web AS</a>
