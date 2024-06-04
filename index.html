@@ -110,6 +110,10 @@
           </a> \
           ";
         document.getElementById("graf").innerHTML = _html;
+        for (const child of clicked.parentNode.children) {
+          child.style.border = "none"; 
+        }
+        clicked.style.border = "2px solid #FF0000"; 
       }
     </script>
   </head>
@@ -120,12 +124,12 @@
     <section id="værvarsel">
       <menu baseurl="https://www.yr.no/place/">
         <menuitem
-          sted = "61.017,10.579"
+          sted = "1-144045"
           onmouseover="changeGraph(this)"
           onclick="changeGraph(this)"
           id="default"
           >
-          K147
+          Almstua
         </menuitem>
         <menuitem
           sted="2-2676176"
